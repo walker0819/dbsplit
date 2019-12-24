@@ -1,0 +1,24 @@
+server:
+  port: 10001
+spring:
+  #https://mp.weixin.qq.com/s/Adn1ok_l3msm8fAaCuIyMA
+  datasource:
+    master:
+      url: jdbc:mysql://11.11.206.167:3306/cpum_dev?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: cpum_dev
+      password: cpum1008@2019
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    slave:
+      url: jdbc:mysql://11.11.206.167:3306/cpum_dev?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: cpum_dev
+      password: cpum1008@2019
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+#MyBatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.josh.dbseparated.dao: trace
